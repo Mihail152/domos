@@ -83,6 +83,19 @@ function images() {
         .pipe(dest(paths.images.dest));
 }
 
+function icons() {
+    return gulp.src('node_modules/social-icons-webfont/style.css', { encoding: false })
+        .pipe(concat('social-icons.css'))
+        // .pipe(cleanCSS())
+        .pipe(dest(paths.styles.dest))
+};
+
+function fonts_icon(){
+    return gulp.src('node_modules/social-icons-webfont/fonts/**/*', { encoding: false })
+    .pipe(dest(paths.styles.dest + '/fonts'))
+}
+
+
 // Watch
 function watchFiles() {
     watch(paths.styles.src, styles);
@@ -90,6 +103,8 @@ function watchFiles() {
     watch(paths.html.src, html);
     watch(paths.images.src, images);
 }
+
+
 
 // BrowserSync
 function browserSyncServe(cb) {
@@ -106,8 +121,8 @@ function browserSyncReload(cb) {
     cb();
 }
 
-const build = series(parallel(html, styles, scripts, images));
+const build = series(parallel(html, styles, icons, fonts_icon,scripts, images));
 const watchTask = parallel(watchFiles, browserSyncServe);
 
-export { html, styles, scripts, watchTask as watch, build as default };
+export { html, icons, fonts_icon, styles, scripts, watchTask as watch, build as default };
 

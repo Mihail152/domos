@@ -1,7 +1,60 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <img class="" src="images/logo.png" alt="">
+<header class="header">
+  <div class="container">
+    <div class="row header__inner">
+      <div class="col-md-3">
+        <img class="" src="images/logo.png" alt="" />
+      </div>
+      <div class="col-md-4 d-flex align-items-center justify-content-center">
+        @@include('../components/social.html')
+      </div>
+      <div
+        class="col-md-2 d-flex align-items-center justify-content-center flex-wrap gap-1"
+      >
+        <div>
+          <a href="tel:#" class="btn set-1 w-100 mb-3 blik">+7 (934) 477 26 49</a>
+          <a href="tel:#" class="btn set-1 w-100 blik">+7 (934) 477 26 49</a>
         </div>
-    </div>    
-</div>
+      </div>
+      <div
+        class="col-md-3 d-flex align-items-center justify-content-end flex-wrap gap-1"
+      >
+        <div>
+          <a href="mailto:#" class="btn set-1 w-100 blik">domos-expert@yandex.ru</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container">      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown link
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
